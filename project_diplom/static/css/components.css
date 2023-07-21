@@ -1,0 +1,31 @@
+/* Footer */
+
+.footer{
+    background-color: #1A1A1A;
+}
+
+.footer .container{
+    padding-top: 50px;
+}
+
+.footer a, footer li{
+    text-decoration: none;
+    transition: all .3s;
+    color: #ccc;
+}
+
+.footer a:hover{
+    color: #fc0;
+}
+
+.footer li a{
+    display: block;
+}
+
+.footer-icons{
+    display: inline block;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* Footer */

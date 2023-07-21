@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Оформление заказа{% endblock title %}
+
+{% block content %}
+<div class="container-fluid py-5 text-center">
+    <div class="row">
+        <div class="col-md-6 m-auto text-center">
+            <h1 class="h1" style="padding-top: 100px;">Оформление заказа</h1>
+        </div>
+        <div class="order-info text-center">
+            <h3 class="text-center">Ваш заказ</h3>
+            {% for item in cart %}
+            <li style="list-style-type: none;">
+                <p>Количество: {{ item.quantity }}</p>
+                <p>{{ item.product.name }}</p>
+            </li>
+            {% endfor %}
+        </div>
+        <p>Всего: Br {{ cart.get_total_price }}</p>
+        <form action="." method="post" class="order-form">
+            <div class="row">
+                <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                    <div class="quote-form-wrapper">
+                        <label class="order-form" for="id_firstname"></label>
+                        <input type="text" class="form-input" placeholder="Имя"
+                               id="id_firstname" name="first_name" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                    <div class="quote-form-wrapper">
+                        <label class="order-form" for="id_lastname"></label>
+                        <input type="text" class="form-input" placeholder="Фамилия"
+                               id="id_lastname" name="last_name" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                    <div class="quote-form-wrapper">
+                        <label class="order-form" for="id_email"></label>
+                        <input type="text" class="form-input" placeholder="Email"
+                               id="id_email" name="email" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                    <div class="quote-form-wrapper">
+                        <label class="order-form" for="id_address"></label>
+                        <input type="text" class="form-input" placeholder="Адрес"
+                               id="id_address" name="address" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                    <div class="quote-form-wrapper">
+                        <label class="order-form" for="id_postalcode"></label>
+                        <input type="text" class="form-input" placeholder="Почтовый код"
+                               id="id_postalcode" name="postal_code" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                    <div class="quote-form-wrapper">
+                        <label class="order-form" for="id_city"></label>
+                        <input type="text" class="form-input" placeholder="Город"
+                               id="id_city" name="city" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p><input type="submit" class="btn btn-dark" value="Оформить заказ"></p>
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+{% endblock %}

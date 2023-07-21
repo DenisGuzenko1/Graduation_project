@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static '/css/card_detail.css' %}">
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{ product.image.url }}" alt="Error" width=76%>
+    </div>
+   <div class="co-md-2">
+       <h5> Описание: </h5>
+       <h6>Категория: {{product.cat}}</h6>
+       <p> {{ product.description }}</p>
+       <br>
+       <h5>Цена:</h5>
+       <p>{{ product.price }} р</p>
+       <h6>Артикул: {{ product.article}}</h6>
+       <br>
+       <div>
+           <form action="{% url 'cart_add' product.id %}" class="form-inline" method="post">
+               {% csrf_token %}
+               <h5>Количество</h5>
+                <label class="form-label" for="id_quantity"></label>
+                <input type="button" class="btn btn-secondary" value="-" onClick="change('amount',0,10,-1);"/>
+                <input id="amount" type="text" value="1" id="id_quantity" name="quantity"/>
+                <input type="button" class="btn btn-secondary" value="+" onClick="change('amount',0,10, 1);"/></h5>
+                <input type="submit" class="btn btn-dark" value="Добавить в корзину">
+           </form>
+       </div>
+   </div>
+</div>
+<script src="{% static '/js/scripts.js' %}"></script>
+{% endblock %}

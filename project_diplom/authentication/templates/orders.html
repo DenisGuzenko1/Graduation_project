@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Заказы{% endblock title %}
+
+{% block content %}
+<div class="title">
+    <h1 style="font-size: 60px;">Ваши заказы</h1>
+     </div>
+    <style>.title {padding-top: 100px; padding-bottom: 50px; text-align: center;}</style>
+    {% if orderitems|length > 0 %}
+    {% for order in orderitems %}
+    <div class="row order">
+        <div class="co-md-2">
+            <p style="font-size: 40px">Заказ № {{ order.order }}</p>
+            <br>
+            <p style="font-size: 30px"><b>Количество: </b>{{ order.quantity }}</p>
+            <br>
+            <p style="font-size: 20px"><b>{{ order.product }}</b></p>
+            <br>
+            <p><b>Стоимость: </b>{{ order.get_cost }}р</p>
+            <br>
+            <hr style="border: 2px solid;">
+            {% endfor %}
+            <a class="btn btn-dark" href="{% url 'first_page' %}">На главную</a>
+            <a class="btn btn-dark" href="{% url 'product_index' %}">Каталог</a>
+        </div>
+    </div>
+    <style>.order {text-align: center;}</style>
+    {% else %}
+    <h4 style="text-align: center;">У вас нет заказов</h4>
+    {% endif %}
+{% endblock %}

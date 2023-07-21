@@ -1,0 +1,92 @@
+body{
+    background: #333; /* Цвет фона */
+    color: #fc0; /* Цвет текста */
+}
+
+/* Carousel */
+.my-carousel{
+    padding: 0;
+}
+.my-carousel .carousel-item{
+    display: flex;
+    max-height: 500px;
+}
+
+.my-carousel .carousel-item img{
+    object-fit: cover;
+}
+/* Carousel */
+
+/* About */
+
+.about{
+    padding: 50px 20px 30px 5px; /* внутренний отступ блочных тегов от верхнего края, от правого края, снизу, слева */
+}
+
+.about .image_1 img{
+    width: 100%;
+}
+
+/* About */
+
+/*  Components */
+.components {
+    padding: 50px 20px 30px 5px;
+}
+
+.components img{
+    width: 100%;
+}
+
+/*  Components */
+
+/* Bikes */
+
+.bikes {
+    padding: 50px 20px 30px 5px;
+}
+
+.bikes .image_1 img{
+    width: 100%;
+}
+
+/* Bikes */
+
+/* Rent */
+.rent {
+    padding: 50px 20px 30px 5px;
+}
+
+.rent img{
+    width: 100%;
+}
+
+/* Rent */
+
+.footer{
+   background-color: #1A1A1A;
+   margin-top: 100px;
+}
+.footer .container{
+    padding-top: 50px;
+}
+
+.footer a, footer li{
+    text-decoration: none;
+    transition: all .3s;
+    color: #ccc;
+}
+
+.footer a:hover{
+    color: #fc0;
+}
+
+.footer li a{
+    display: block;
+}
+
+.footer-icons{
+    display: inline block;
+    margin-right: 15px;
+    font-size: 20px;
+}

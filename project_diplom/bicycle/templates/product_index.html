@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Качественные велосипеды от именитых производителей {% endblock %}
+{% block content %}
+<center>
+    <h1>Каталог</h1>
+
+    <div class="container py-5">
+        <div class="row">
+            {% for product in products %}
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <p class="aligncenter">
+                        {% if product.image %}
+                        <p><img src="{{ product.image.url }}" alt="" width="70%"></p>
+                        {% else %}
+                        <p></p>
+                        {% endif %}
+                    </p>
+                    <style>.aligncenter {text-align: center;}</style>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <h5 class="card-title">Категория: {{ product.cat }}</h5>
+                        <h6 class="card-text">Цена: {{ product.price }} р</h6>
+
+                        <a href="{% url 'product_detail' product.id %}"
+                           class="btn btn-dark">
+                            Подробнее
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</center>
+{% endblock %}
+<!--<h1>Компоненты</h1>-->
+<!--<div class="row">-->
+<!--    {% for com in components %}-->
+<!--    <div class="col-md-4">-->
+<!--        <div class="card mb-2">-->
+<!--            <img class="card-img-top" src="{{ com.photo.url }}" alt="Надеюсь" width="300px" height="300px">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title"> {{ com.name }} </h5>-->
+<!--                <p class="card-text"> {{ com.description }}</p>-->
+<!--                <a href="{% url 'components_detail' com.pk %}"-->
+<!--                class="btn btn-primary">-->
+<!--                    Подробнее-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+<!--</div>-->
