@@ -12,7 +12,7 @@
         {% if cart|length > 0 %}
             {% for item in cart %}
             {% with product=item.product %}
-            <div class="row">
+    <div class="row">
                 <div class="col-md-6">
                     <img class='image' src="{{ product.image.url }}" alt="" width="100%">
                 </div>
@@ -36,15 +36,14 @@
                 <a href="{% url 'login' %}" class="btn btn-dark" name="send">Добавить в заказ</a>
               {% endif %}
                 <a href="{% url 'product_index' %}" class="btn btn-dark" name="catalog">Продолжить покупки</a>
+            </div>
         {% endwith %}
         {% endfor %}
     {% else %}
-            <div class="empty">
+            <div class="empty" style="text-align: center; padding-top: 50px; height: 367px;">
                 <h4>Ваша корзина пуста</h4>
             </div>
-            <style>.empty {text-align: center; padding-top: 50px; height: 367px;}</style>
         {% endif %}
     {% endwith %}
-    </div>
     </div>
 {% endblock %}

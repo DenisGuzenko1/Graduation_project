@@ -12,7 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
-  <title>{% block title %}{% endblock %}</title>
+<title>{% block title %}{% endblock %}</title>
+<link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
 </head>
 <body>
 <nav class="navbar fixed-top navbar-expand-sm bg-body-tertiary" data-bs-theme="dark">  <!-- когда будет сворачиваться меню-->
@@ -32,16 +33,13 @@
           <a class="nav-link" href="{% url 'product_index' %}">Велосипеды</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'orders' %}">Заказы</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="{% url 'about' %}">О нас</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'delivery' %}">Доставка</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
+      <form action="{% url 'search' %}" class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
@@ -61,11 +59,6 @@
          <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
       </ul>
       </div>
-      {% if user.is_authenticated %}
-      <a class="navbar-brand" href="{% url 'profile' %}">
-        <img src="{% static 'img/user.svg' %}"  width="30" height="30" alt="Личный кабинет">
-      </a>
-      {% endif %}
       <a class="navbar-brand" href="{% url 'cart_detail' %}">
         <img src="{% static 'img/Shop_basket.svg' %}"  width="30" height="30" alt="Корзина">
     </a>
@@ -73,6 +66,7 @@
     </div>
   </div>
 </nav>
+
 
 
 {% block content %}

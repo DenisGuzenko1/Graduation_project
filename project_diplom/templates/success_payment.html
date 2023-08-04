@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Корзина{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="{% static '/css/card_detail.css' %}">
+<div class="title">
+    <h1>Корзина покупок</h1>
+     </div>
+    <style>.title {padding-top: 100px; text-align: center;}</style>
+
+<div class="empty" style="text-align: center; padding-top: 50px; height: 367px;">
+    <h4>Ваша корзина пуста</h4>
+</div>
+{% endblock %}

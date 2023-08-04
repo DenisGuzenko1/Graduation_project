@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from project_diplom import views
+from .views import Search
 
 from project_diplom import settings
 
@@ -29,7 +30,9 @@ urlpatterns = [
     path('auth/', include('authentication.urls'), name='auth'),
     path('order/', include('order.urls'), name='order'),
     path('about/', views.about, name='about'),
-    path('delivery/', views.delivery, name='delivery')
+    path('delivery/', views.delivery, name='delivery'),
+    path('search/', views.project_search, name='search'),
+    path('payments/', include('payments.urls'), name='payments'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

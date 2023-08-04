@@ -78,7 +78,15 @@
                 </div>
             </div>
             <br>
-            <p><input type="submit" class="btn btn-dark" value="Оформить заказ"></p>
+            <form action="{% url 'charge' %}" method="post">
+                {% csrf_token %}
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button">
+                    data-key="{{ key }}"
+                    data-description="Payment"
+                    data-amount= {{ item.price }}
+                    data-locale="auto"
+                </script>
+            </form>
             {% csrf_token %}
         </form>
     </div>

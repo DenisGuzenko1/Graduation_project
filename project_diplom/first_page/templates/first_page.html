@@ -12,7 +12,7 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
-      <img src="{% static 'img/bike_shop.jpg' %}" class="d-block w-100" data-bs-interval="30" alt="bike_shop">
+      <a href="{% url 'about' %}"><img src="{% static 'img/bike_shop.png' %}" class="d-block w-100" alt="cool_bike"></a>
       <div class="carousel-caption d-none d-md-block">
         <h5>Нашей команде уже более 20 лет</h5>
         <p>На протяжении 20 лет мы помогаем людям знакомится с миром велоспорта</p>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="5000">
-      <img src="{% static 'img/delivery.jpg' %}" class="d-block w-100" alt="Merida">
+      <a href="{% url 'delivery' %}"><img src="{% static 'img/delivery_2.jpg' %}" class="d-block w-100" alt="delivery"></a>
       <div class="carousel-caption d-none d-md-block">
         <h5 style="color: #fc0; font-weight: bold; font-size: 20px;">Доставка</h5>
         <p style="color: #fc0; font-weight: bold; font-size: 20px;">Мы бесплатно доставляем велосипеды по Минску и РБ</p>
@@ -49,14 +49,15 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <div class="image_1"><img src="{% static 'img/bike_shop.jpg' %}"></div>
+            <div class="image_1"><img src="{% static 'img/bike-shop2.jpg' %}"></div>
           </div>
           <div class="col-md-4">
             <h1 class="mark_text">О нас</h1>
-            <p class="lorem_text">В магазине всегда представлено более 250 моделей велосипедов на любой возраст и вкус, а также более 700 наименований запчастей и аксессуаров для велосипедов. Наша команда - это люди, которые любят и знают свое дело, которые с радостью и удовольствием проконсультируют и помогут сделать правильный выбор.</p>
-            <p>Мы располагаемся по адресу: <b>г. Минск, ул. Ложинская, 23, работаем ежедневно с 10:00 до 20:00</b></p>
-            <div class="contact_bt"><a href="#">Read More</a></div>
-            <a class="btn btn-primary" href="#" role="button">Link</a>
+            <p class="lorem_text">В магазине всегда представлено более 250 моделей велосипедов на любой возраст и вкус,
+              а также более 700 наименований запчастей и аксессуаров для велосипедов.
+              Наша команда - это люди, которые любят и знают свое дело, которые
+              с радостью и удовольствием проконсультируют и помогут сделать правильный выбор.</p>
+            <a class="btn btn-dark" href="{% url 'about' %}" role="button">О нас</a>
           </div>
         </div>
       </div>
@@ -66,11 +67,15 @@
   <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2 class="mark_text">Компоненты</h2>
-          <p class="comp_text"> Мы продаем разные штуки</p>
+          <h2 class="mark_text">Велосипеды</h2>
+          <p class="comp_text">В магазине всегда представлено более 250 моделей велосипедов на любой возраст и вкус,
+            а также более 700 наименований запчастей и аксессуаров для велосипедов.
+            Наша команда - это люди, которые любят и знают свое дело, которые с радостью и
+            удовольствием проконсультируют и помогут сделать правильный выбор.</p>
+          <a class="btn btn-dark" href="bicycle" role="button">Каталог</a>
         </div>
         <div class="col-md-8">
-          <img src="{% static 'img/components.jpg' %}" alt="">
+          <img src="{% static 'img/scott_spark.jpg' %}" alt="scott_spark">
         </div>
   </div>
   </div>
@@ -82,33 +87,25 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <div class="image_1"><img src="{% static 'img/cool_bike.png' %}"></div>
+            <div class="image_1"><img src="{% static 'img/main_master.jpg' %}"></div>
           </div>
           <div class="col-md-4">
-            <h1 class="mark_text">О нас</h1>
-            <p class="lorem_text">В магазине всегда представлено более 250 моделей велосипедов на любой возраст и вкус, а также более 700 наименований запчастей и аксессуаров для велосипедов. Наша команда - это люди, которые любят и знают свое дело, которые с радостью и удовольствием проконсультируют и помогут сделать правильный выбор.</p>
+            <h1 class="mark_text">Доставка</h1>
+            <p>Мы осуществляем бесплатную доставку по городу Минску при заказе от 300 BYN.
+              Также доставляем в любую точку Республики Беларусь за 15 BYN или можно воспользоваться
+              услугой ускоренной доставки за 20 BYN.  Велосипеды доставляются до подъезда,
+              аксессуары и запчасти для велосипедов — до двери.
+              При заказе велосипеда до 12:00 доставка по Минску производится в день заказа
+              (при наличии необходимого товара на складе), при заказе после 12:00 — на следующий день
+              (при наличии необходимого товара на складе).
+              Доставка по Республике Беларусь осуществляется в течение 1-5 дней после заказа.
+              Если понравившегося товара нет в наличии, мы можем привезти его под заказ в срок от 7 до 20 дней.</p>
             <p>Мы располагаемся по адресу: <b>г. Минск, ул. Ложинская, 23, работаем ежедневно с 10:00 до 20:00</b></p>
-            <div class="contact_bt"><a href="#">Read More</a></div>
-            <a class="btn btn-primary" href="#" role="button">Link</a>
+            <a class="btn btn-dark" href="delivery" role="button">Доставка</a>
           </div>
         </div>
       </div>
     </div>
-
-<div class="rent">
-  <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h2 class="mark_text">Компоненты</h2>
-          <p class="comp_text"> Мы продаем разные штуки</p>
-        </div>
-        <div class="col-md-8">
-          <img src="{% static 'img/rent.jpg' %}" alt="">
-        </div>
-  </div>
-  </div>
-</div>
-
 
 
 {% endblock %}

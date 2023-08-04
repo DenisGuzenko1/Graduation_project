@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'payments.apps.PaymentsConfig',
     'order.apps.OrderConfig',
     'authentication.apps.AuthenticationConfig',
     'bicycle.apps.BicycleConfig',
@@ -131,3 +132,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = 'cart'
 
+STRIPE_PUBLISHABLE_KEY='pk_test_51Nb8SAL7wtgC9boqgtleOlz6EyiQY0C6meb7UjAYbCxv3ViK7MSwMa17OGPd2d0LbboWu5fAspNClvPgvp5UkfKL00xUcZEJgL'
+STRIPE_SECRET_KEY='sk_test_51Nb8SAL7wtgC9boq1XFrF9o3bjBJVVrLCDkbtw9wP8MqT0u7y4daqcXCqa6gi6Gp1kDOqViYM6Q2DAR0hNyb6RBK00YgsqqL2v'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'graduation_cache'),
+    }
+}
