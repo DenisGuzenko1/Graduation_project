@@ -22,7 +22,7 @@ def login_user(request):
             else:
                 context = {
                     'login_form': login_form,
-                    'attention': f'The user with username {username} and password not found!'
+                    'attention': f'Пользователь с таким именем {username} и паролем не найден!'
                 }
         else:
             context = {

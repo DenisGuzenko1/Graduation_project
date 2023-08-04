@@ -15,9 +15,9 @@ class LoginForm(forms.Form):
         try:
             self.user = User.objects.get(username=username)
         except User.DoesNotExist:
-            raise forms.ValidationError(f'The user with username {username} does not exists')
+            raise forms.ValidationError(f'Пользователь с таким именем {username} не существует')
         if not self.user.check_password(password):
-            raise forms.ValidationError(f'Password for user {username} is not correct!')
+            raise forms.ValidationError(f'Пароль этого пользователя {username} введен неверно!')
 
 
 class RegisterForm(forms.ModelForm):

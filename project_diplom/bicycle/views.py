@@ -1,10 +1,9 @@
-from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
-
+from django.views.decorators.cache import cache_page
 from cart.forms import CartAddProductForm
 from .models import Product, Category
 
-
+@cache_page(60 * 15)
 def product_index(request):
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
