@@ -1,25 +1,20 @@
-from django.shortcuts import render
-from django.views.generic import ListView
-from bicycle.models import Product
-from .forms import Search
+from django.shortcuts import render  # Импорт функции render из модуля django.shortcuts
+
+from bicycle.models import Product  # Импорт модели Product из приложения bicycle
+from .forms import Search  # Импорт формы Search из текущего пакета (текущего приложения)
+
 
 def about(request):
+    """
+    Представление для страницы "about".
+    Возвращает шаблон "about.html" при обращении к данному URL.
+    """
     return render(request, 'about.html')
 
 
 def delivery(request):
+    """
+    Представление для страницы доставки.
+    Возвращает шаблон "delivery.html" при обращении к данному URL.
+    """
     return render(request, 'delivery.html')
-
-def project_search(request):
-    result = []
-    query = None
-    if 'query' in request.GET:
-        form = Search(request.GET)
-        if form.is_valid():
-            query = form.cleaned_data['query']
-            result = Product.objects.filter(name=f'{query}')
-
-    else:
-        form = Search()
-    context = {'form': form, 'query': query, 'result': result}
-    return render(request, 'search.html', context)

@@ -31,7 +31,6 @@ urlpatterns = [
     path('order/', include('order.urls'), name='order'),
     path('about/', views.about, name='about'),
     path('delivery/', views.delivery, name='delivery'),
-    path('search/', views.project_search, name='search'),
     path('payments/', include('payments.urls'), name='payments'),
 ]
 if settings.DEBUG:
